@@ -17,7 +17,7 @@ Créer un utilisateur user_hack & lui donner toutes les permissions sur la base 
 
 Créer un fichier `.env.local` avec :
 ```
-DATABASE_URL="mysql://usr_hack:[MOT_DE_PASSE]@127.0.0.1:3306/Hackathon?serverVersion=[version]&charset=utf8mb4"
+DATABASE_URL="mysql://user_hack:[MOT_DE_PASSE]@127.0.0.1:3306/Hackathon?serverVersion=[version]&charset=utf8mb4"
 ```
 Valeurs à adapter selon votre configuration
 
@@ -25,14 +25,20 @@ En option : Créer la base si celle-ci n'existe pas
 ```bash
 php bin/console doctrine:database:create
 ```
+Si modif des fields d'une entity manuellement 
+```bash
+php bin/console make:entity --regenerate App
+php bin/console make:migration
+php bin/console make:migration
+```
 
 # TODO 
-
+Ajouter l'entité Participant 
 ## Entités
 
 | Entité | Attributs principaux
-|---|---|
-| [Equipe] | [nom, ...] 
+| [Organisateur] | [nom, siteweb]
+| [Hackathon] | [dateHeureDebut, dateHeureFin, lieu, ville, theme] |
 | [Participant] | [nom, prenom, ...]|
 | [...] | [...] |
 
@@ -44,7 +50,7 @@ Générer le jeu d'essai en définissant les fixtures
 Générer et appliquer les migrations et charger le jeu d'essai :
 
 ```bash
-indiquer les principales commandes symfony
+php bin/console doctrine:fixtures:load
 ```
 
 ## Test d'interrogation

@@ -2,39 +2,39 @@
 
 namespace App\Repository;
 
-use App\Entity\Exi;
+use App\Entity\Hackathon;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<Exi>
+ * @extends ServiceEntityRepository<Hackathon>
  */
-class ExiRepository extends ServiceEntityRepository
+class HackathonRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, Exi::class);
+        parent::__construct($registry, Hackathon::class);
     }
 
 //    /**
-//     * @return Exi[] Returns an array of Exi objects
+//     * @return Hackathon[] Returns an array of Hackathon objects
 //     */
 //    public function findByExampleField($value): array
 //    {
-//        return $this->createQueryBuilder('e')
-//            ->andWhere('e.exampleField = :val')
+//        return $this->createQueryBuilder('h')
+//            ->andWhere('h.exampleField = :val')
 //            ->setParameter('val', $value)
-//            ->orderBy('e.id', 'ASC')
+//            ->orderBy('h.id', 'ASC')
 //            ->setMaxResults(10)
 //            ->getQuery()
 //            ->getResult()
 //        ;
 //    }
 
-//    public function findOneBySomeField($value): ?Exi
+//    public function findOneBySomeField($value): ?Hackathon
 //    {
-//        return $this->createQueryBuilder('e')
-//            ->andWhere('e.exampleField = :val')
+//        return $this->createQueryBuilder('h')
+//            ->andWhere('h.exampleField = :val')
 //            ->setParameter('val', $value)
 //            ->getQuery()
 //            ->getOneOrNullResult()
