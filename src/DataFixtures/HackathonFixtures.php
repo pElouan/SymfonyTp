@@ -16,6 +16,8 @@ class HackathonFixtures extends Fixture
             $hack->setDateHeureDebut(new \DateTime('now'));
             $hack->setDateHeureFin(new \DateTime('now'));
             $manager->persist($hack);
+            // TODO $hack->addOrganisateur
+            // s'aider de addOrganisateur et addHackathon (dans hackathon.php et organisateur.php
         }
         $manager->flush();
     }
